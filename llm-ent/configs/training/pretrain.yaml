@@ -1,0 +1,14 @@
+model_config: configs/model/7b.yaml
+seq_len: 4096
+batch_size_per_device: 1
+grad_accum: 64
+epochs: 1
+lr: 2.0e-4
+warmup_steps: 2000
+weight_decay: 0.1
+bf16: true
+gradient_checkpointing: true
+optimizer: "adamw_torch_fused"
+save_every_steps: 2000
+output_dir: "checkpoints/pretrain"
+dataset_parquet: "data/packed_pretrain.parquet"

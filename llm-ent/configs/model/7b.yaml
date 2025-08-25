@@ -1,0 +1,16 @@
+# Llama-ish decoder-only with GQA + RoPE scaling
+architectures: ["AutoModelForCausalLM"]
+hidden_size: 4096
+intermediate_size: 11008
+num_hidden_layers: 32
+num_attention_heads: 32
+num_key_value_heads: 8     # GQA (reduces KV cache size)
+vocab_size: 32000
+max_position_embeddings: 4096
+rms_norm_eps: 1.0e-5
+rope_theta: 10000
+rope_scaling: { "type": "linear", "factor": 2.0 }  # extend context to ~8k
+hidden_act: "silu"           # SwiGLU internally in many llama configs
+tie_word_embeddings: false
+initializer_range: 0.02
+attn_implementation: "flash_attention_2"  # uses FA2 if available

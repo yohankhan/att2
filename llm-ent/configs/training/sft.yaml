@@ -1,0 +1,10 @@
+base_model: "checkpoints/pretrain/latest"
+dataset_jsonl: "data/sft.jsonl"   # [{"prompt": "...", "response": "..."}]
+max_steps: 20000
+lr: 5.0e-5
+bf16: true
+use_qlora: true
+lora_r: 64
+lora_alpha: 16
+lora_dropout: 0.05
+output_dir: "checkpoints/sft"

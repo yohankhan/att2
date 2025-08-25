@@ -1,0 +1,7 @@
+base_model: "checkpoints/sft/merged"   # merged LoRA or full model
+dataset_jsonl: "data/dpo.jsonl"        # [{"prompt": "...", "chosen": "...", "rejected": "..."}]
+beta: 0.1
+lr: 5.0e-6
+bf16: true
+max_steps: 10000
+output_dir: "checkpoints/dpo"

@@ -1,0 +1,29 @@
+
+# Core
+torch>=2.2
+transformers>=4.41
+datasets>=2.20
+tokenizers>=0.15
+accelerate>=0.30
+sentencepiece>=0.2
+safetensors>=0.4
+
+# Scale & speed
+deepspeed>=0.13
+bitsandbytes>=0.43
+trl>=0.9
+peft>=0.11
+
+# Optional kernels (install per-GPU platform)
+# pip install flash-attn --no-build-isolation
+# xformers optional
+
+# Serving & eval
+vllm>=0.5
+lm-eval==0.4.4
+
+# API / server / monitoring
+fastapi>=0.110
+uvicorn>=0.29
+opentelemetry-sdk>=1.25
+opentelemetry-instrumentation-fastapi>=0.48
